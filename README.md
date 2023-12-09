@@ -9,9 +9,4 @@ Within there be sure to first READMEFIRST.txt as that is a manual or explanation
 
 Enjoy playing around with it.
 
-
-Screenshots of program
-
-file:///home/deck/Documents/Python Coding Projects/PythonAssignment/Experimental/Screenshot of code test that it works.png
-
-file:///home/deck/Documents/Python Coding Projects/PythonAssignment/Experimental/Screenshot of the code running.png
+Created by IrishOtaku (Joshua Gill) 
