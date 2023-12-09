@@ -26,7 +26,7 @@ Description of who worked on who within the code.
 
 I wrote the code, and my mother helped me write how to use the program and how to structure it in a ellgible manner.
 
-She also helped with the data dictionary and i took care of screenshot
+She also helped with the data dictionary and i took care of screenshots
 
 
 
