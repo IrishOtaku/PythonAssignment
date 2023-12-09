@@ -1,0 +1,86 @@
+# Pseudocode for program which I created into one file and then split it into 3 files.
+
+# Define ConversionCalculator class
+class ConversionCalculator:
+    # Method to perform unit conversions
+    method convert(conversion_type, value):
+        result = perform_conversion(conversion_type, value)
+        return result
+
+    # Method for processing and delegating unit conversions
+    method perform_conversion(conversion_type, value):
+        units = split_conversion_type(conversion_type)
+        if length of units is not 2:
+            return "Invalid conversion type: " + conversion_type
+
+        from_unit, to_unit = units
+        result = _convert(from_unit, to_unit, value)
+        return result
+
+    # Method for actual unit conversion
+    method _convert(from_unit, to_unit, value):
+        conversion_factors = {...}  # Dictionary containing conversion factors and functions
+        conversion_key = (from_unit, to_unit)
+
+        if conversion_key not in conversion_factors:
+            return "Conversion not supported: " + from_unit + " to " + to_unit
+
+        if conversion_factors[conversion_key] is a function:
+            result = conversion_factors[conversion_key](value)
+        else:
+            result = value * conversion_factors[conversion_key]
+
+        return result
+
+# Function to display main menu and get user input
+function main_menu():
+    print_menu_options()
+    choice = get_user_input()
+    return choice
+
+# Function to perform the chosen conversion
+function perform_conversion(choice, calc):
+    if choice is 11:
+        print("Exiting the program.")
+        exit()
+    elif choice is 6:
+        result = perform_kilometers_to_miles_conversion(calc)
+        print_result(result, "miles")
+    else:
+        conversion_type = get_conversion_type(choice)
+
+        if conversion_type is null:
+            print("Invalid conversion type. Please try again.")
+            return
+
+        value = get_user_input("Enter the value to convert from " + conversion_type + ": ")
+        result = perform_general_conversion(calc, conversion_type, value)
+        unit_symbol = get_unit_symbol(conversion_type)
+        print_result(result, unit_symbol)
+
+# Function to retrieve conversion type based on user choice
+function get_conversion_type(choice):
+    conversion_options = [...]
+    return conversion_options[choice - 1] if 1 <= choice <= 10 else null
+
+# Function to retrieve unit symbol based on conversion type
+function get_unit_symbol(conversion_type):
+    symbols = {...}
+    return symbols[conversion_type] if conversion_type in symbols else ""
+
+# Main function to run the program
+function main():
+    calc = create_instance_of_conversion_calculator()
+
+    while true:
+        choice = main_menu()
+
+        if choice is 11:
+            print("Exiting the program.")
+            break
+        elif 1 <= choice <= 10:
+            perform_conversion(choice, calc)
+
+# Check if script is being run as the main program
+if this script is being run as the main program:
+    main()

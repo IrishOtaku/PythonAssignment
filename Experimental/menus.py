@@ -1,8 +1,12 @@
 # File: menus.py
 
+# Import the pytest library for testing
 import pytest
+
+# Import the ConversionCalculator class from the conversion_calculator module within the same directory
 from conversion_calculator import ConversionCalculator
 
+# Define the main_menu function in same directory with code for displaying conversion options and getting user input
 def main_menu():
     print("\nSelect a conversion option:")
     print("1. Acres To Hectares (ha)")
@@ -17,7 +21,7 @@ def main_menu():
     print("10. Stones To Kilogram (kg)")
     print("11. Quit")
 
-    # Clear input buffer
+    # Clear input buffer to avoid unexpected input and fixes bugs with keyboard input
     try:
         import msvcrt
         while msvcrt.kbhit():
@@ -26,19 +30,23 @@ def main_menu():
         import sys
         sys.stdin.flush()
 
+    # Get user input for the chosen conversion option
     choice = int(input("Choose an option: "))
     return choice
 
+# Define the perform_conversion function for executing the chosen conversion
 def perform_conversion(choice, calc):
     if choice == 11:
+        # Quit the program if option 11 is chosen
         print("Exiting the program.")
         exit()
     elif choice == 6:
-        # Option 6 is Kilometres To Miles
+        # Option 6 is Kilometres To Miles, get user input and perform the conversion
         value = float(input("Enter the distance in kilometers: "))
         result = calc.convert("kilometres_to_miles", value)
         print(f"Result: {result} miles")
     else:
+        # For other options, get the conversion type, user input, and perform the conversion
         conversion_type = get_conversion_type(choice)
         if conversion_type:
             value = float(input(f"Enter the value to convert from {conversion_type}: "))
@@ -51,6 +59,7 @@ def perform_conversion(choice, calc):
         else:
             print("Invalid conversion type. Please try again.")
 
+# Define the get_conversion_type function to retrieve the conversion type based on user choice
 def get_conversion_type(choice):
     conversion_options = [
         "Acres To Hectares", "Celsius To Fahrenheit", "Fahrenheit To Celsius",
@@ -60,6 +69,7 @@ def get_conversion_type(choice):
     ]
     return conversion_options[choice - 1] if 1 <= choice <= 10 else None
 
+# Define the get_unit_symbol function to retrieve the unit symbol based on the conversion type
 def get_unit_symbol(conversion_type):
     symbols = {
         "Acres To Hectares": "ha",
