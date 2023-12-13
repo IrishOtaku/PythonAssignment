@@ -6,7 +6,7 @@ To download the files, just simply run,
 
 git clone https://github.com/IrishOtaku/PythonAssignment.git
 
-Make sure to cd into the correct directory of your choice of course you could simply download it as a zip file, anything to your personal preference.
+Make sure to cd into the correct directory of your choice of course you could simply download it as a zip file, anything to your personal preference or just use a regular file manager if your on Windows, this is file explorer, MacOS finder, and well Linux well WAY TO MANY other than I would reccomend Thunar or Dolphin.
 
 Ensure you have Python installed, and pytest as well via pip or have a text editor or IDE that supports pytest.
 
@@ -26,7 +26,9 @@ Description of who worked on who within the code.
 
 I wrote the code, and my mother helped me write how to use the program and how to structure it in a ellgible manner.
 
-She also helped with the data dictionary and i took care of screenshots
+She also helped with the data dictionary and i took care of screenshots.
+
+I was also found out that I was actually assigned a team but actually he was not in till the entire time of my duration as well when I managed to finish the code myself, which I emailed with screenshot I provided.
 
 
 
